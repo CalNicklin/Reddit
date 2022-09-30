@@ -1,29 +1,28 @@
 import VotingActions from "./voting actions/VotingActions";
 import CommentsActions from "./comment actions/CommentsActions";
 
-const Post = () => {
-    const { avatar, author, time, title, flair, thumbnail } = useFetchPost(
-        'https://www.reddit.com/r/RunningShoeGeeks/comments/xnmit3/kipchoge_beat_his_berlin_record_on_alphafly_2s/.json');
+const Post = (props) => {
+    const { post } = props;
+    const { author, created, title, link_flair_text, thumbnail } = post;
+    const date = new Date(created * 1000).toDateString();
+
 
     return(
         <div>
             <div>
-                Avatar
+                {author}
             </div>
             <div>
-                Author
+                {date}
             </div>
             <div>
-                Time
+                {title}
             </div>
             <div>
-                Title
+                {link_flair_text}
             </div>
             <div>
-                Flair
-            </div>
-            <div>
-                Thumbnail
+                <img src={thumbnail} />
             </div>
             <div>
                 <VotingActions />
