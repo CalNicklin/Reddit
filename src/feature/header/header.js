@@ -1,3 +1,5 @@
+import SubredditTitle from "./SubredditTitle/SubredditTitle";
+
 const Header = () => {
     return (
         <header>
@@ -5,9 +7,7 @@ const Header = () => {
                 <img src='/index.png' alt='Subreddit Title'/> 
             </div>
             <div>
-                <select>
-                    <option>Title</option>
-                </select>
+                <SubredditTitle />
             </div>
             <div>
                 Subtitle

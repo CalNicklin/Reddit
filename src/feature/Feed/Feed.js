@@ -1,25 +1,28 @@
 import Post from "../../components/post/post";
 import useFetchPost from "../../hooks/useFetchPost";
+import { useSubreddit } from "../../context/subreddits";
+import { useEffect } from "react";
 
 const Feed = () => {
 
-    const { isError, response, fetchPost } = useFetchPost(
-        'https://www.reddit.com/r/RunningShoeGeeks/.json');
+    const { subreddit } = useSubreddit();
+    const { isError, response, fetchPost } = useFetchPost(subreddit);
 
+    useEffect(() => {
+        fetchPost(subreddit)
+    }, [subreddit, fetchPost]);
 
     return (
-        <div>
-            {
-                response.map((post, index) => (
-                    <main className='feed'>
-                        <Post
-                            key={index}
-                            post={post.data}
-                        />
-                    </main>
-                ))
-            }
-        </div>
+        <main>
+            {response && !isError && (response.map((post, index) => (
+                <div className='post' key={index}>
+                    <Post
+                        post={post.data}
+                    />
+                </div>
+            )))};
+            {isError && <div className="post">Something went wrong</div>}
+        </main>
     )
 };
 
