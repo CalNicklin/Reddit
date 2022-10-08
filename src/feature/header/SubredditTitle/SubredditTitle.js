@@ -1,8 +1,9 @@
 import { useSubreddit } from "../../../context/subreddits"
 
+const SubredditTitle = (props) => {
 
-const SubredditTitle = () => {
-
+    const { handle } = props;
+    const { title } = handle;
     const { chooseSubreddit } = useSubreddit();
 
     const handleChange = (event) => {
@@ -10,11 +11,14 @@ const SubredditTitle = () => {
     };
 
     return (
-        <select onChange={handleChange}>
-            <option value='https://www.reddit.com/r/RunningShoeGeeks'>r/RunningShoeGeeks</option>
-            <option value='https://www.reddit.com/r/JamesHoffmann'>r/JamesHoffman</option>
-            <option value='https://www.reddit.com/r/hackernoon'>r/hackernoon</option>
-        </select>
+        <div>
+            <select onChange={handleChange}>
+                <option value='https://www.reddit.com/r/RunningShoeGeeks'>RunningShoeGeeks</option>
+                <option value='https://www.reddit.com/r/JamesHoffmann'>JamesHoffman</option>
+                <option value='https://www.reddit.com/r/hackernoon'>hackernoon</option>
+            </select>
+            <p>r/{title}</p>
+        </div>
     )
 };
 

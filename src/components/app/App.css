@@ -55,8 +55,6 @@ header {
   margin: auto;
   width: 80px;
   height: 80px;
-  background-image: url('../../../public/index.png');
-  background-size: contain;
 }
 
 /* Feed Content */

@@ -3,6 +3,7 @@ import SubredditTitle from "./SubredditTitle/SubredditTitle";
 import { useSubreddit } from "../../context/subreddits";
 import useFetchSubreddit from "../../hooks/useFetchSubreddit";
 import { useEffect } from "react";
+import SubredditLogo from "./SubredditLogo/SubredditLogo";
 
 const Header = () => {
 
@@ -20,10 +21,10 @@ const Header = () => {
         return (
             <header>
                 <div>
-                    <img src='/index.png' alt='Subreddit Title' />
+                    <SubredditLogo />
                 </div>
                 <div>
-                    <SubredditTitle />
+                    <SubredditTitle handle={data} />
                 </div>
                 <div>
                     <SubredditSubTitle about={data} />
