@@ -29,9 +29,6 @@ const Header = () => {
                 <div>
                     <SubredditSubTitle about={data} />
                 </div>
-                <div>
-                    Description
-                </div>
             </header>
         )
     } else {
