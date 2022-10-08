@@ -11,9 +11,9 @@ const SubredditTitle = () => {
 
     return (
         <select onChange={handleChange}>
-            <option value='https://www.reddit.com/r/RunningShoeGeeks.json'>r/RunningShoeGeeks</option>
-            <option value='https://www.reddit.com/r/JamesHoffmann.json'>r/JamesHoffman</option>
-            <option value='https://www.reddit.com/r/hackernoon.json'>r/hackernoon</option>
+            <option value='https://www.reddit.com/r/RunningShoeGeeks'>r/RunningShoeGeeks</option>
+            <option value='https://www.reddit.com/r/JamesHoffmann'>r/JamesHoffman</option>
+            <option value='https://www.reddit.com/r/hackernoon'>r/hackernoon</option>
         </select>
     )
 };

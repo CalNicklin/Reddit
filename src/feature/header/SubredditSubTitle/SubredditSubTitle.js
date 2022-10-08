@@ -1,8 +1,11 @@
-const SubredditSubTitle = () => {
+const SubredditSubTitle = (props) => {
+
+    const { about } = props;
+
     return (
-        <p>
-            Subreddit Subtitle
-        </p>
+        <div>
+            {!about && (<div>...loading</div>)}
+        </div>
     )
 };
 

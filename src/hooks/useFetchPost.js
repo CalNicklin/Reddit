@@ -8,7 +8,7 @@ const useFetchPost = (url) => {
     const fetchPost = useCallback(async () => {
         setError(false);
         try {
-            const res = await axios(url, {
+            const res = await axios(`${url}.json`, {
             })
             const posts = res.data.data.children;
             setResponse(posts);

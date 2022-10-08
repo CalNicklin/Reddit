@@ -7,7 +7,7 @@ export const useSubreddit = () => useContext(SubredditContext);
 export const SubredditProvider = ({ children }) => {
 
     const [subredditState, setSubredditState] = useState({
-        subreddit: 'https://www.reddit.com/r/RunningShoeGeeks.json',
+        subreddit: 'https://www.reddit.com/r/RunningShoeGeeks',
         chooseSubreddit: (url) => {
             setSubredditState((prevState) => {
                 return {
