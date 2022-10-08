@@ -11,7 +11,6 @@ const useFetchSubreddit = (url) => {
             const res = await axios(`${url}/about.json`, {
             })
             const subredditAbout = res.data;
-            console.log(subredditAbout);
             setResponse(subredditAbout);
         }
         catch (error) {

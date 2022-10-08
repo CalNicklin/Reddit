@@ -16,7 +16,7 @@ const Header = () => {
     }, [subreddit, fetchSubreddit]);
 
 
-    if (!isError && response) {
+    if (!isError && data) {
         return (
             <header>
                 <div>

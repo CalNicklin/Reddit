@@ -20,7 +20,7 @@ const Feed = () => {
                         post={post.data}
                     />
                 </div>
-            )))};
+            )))}
             {isError && <div className="post">Something went wrong</div>}
         </main>
     )
