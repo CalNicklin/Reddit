@@ -57,9 +57,21 @@ header {
   height: 80px;
 }
 
+/* Feed */
+
+.feed {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin: auto;
+  width: 723px;
+  height: 325px;
+  top: 242px;
+}
+
 /* Feed Content */
 .post {
-  position: relative;
+  float: left;
   top: 226px;
   height: 153px;
   width: 550px;
@@ -68,4 +80,30 @@ header {
   overflow-y: scroll;
   background: #908c8c;
   border-radius: 3px;
+}
+
+/* Flair Container */
+
+.flairContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 10px;
+  justify-content: center;
+  padding-top: 10px;
+  margin-top: 16px;
+  float: right;
+  max-width: 200px;
+  background: #696FFF;
+  border-radius: 3px;
+}
+
+/* Flair */
+
+.flair {
+  flex-basis: 40%;
+  flex-grow: 0;
+  width: 50px;
+  background: #D9D9D9;
+  border-radius: 15px;
 }
