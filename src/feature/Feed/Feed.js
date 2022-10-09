@@ -18,7 +18,7 @@ const Feed = () => {
     const allFlairs = response.map(post => post.data.link_flair_text).filter(flair => flair !== null);
     const uniqueFlairs = [...new Set(allFlairs)];
 
-    const { flair, chooseFlair } = useFlair();
+    const { flair, chooseFlair, resetFlair } = useFlair();
 
     const filteredResponse = response.filter(post => post.data.link_flair_text === flair);
 
@@ -30,7 +30,7 @@ const Feed = () => {
         <div className='feed'>
             <main>
                 {response && !isError && (
-                    (filteredResponse ? filteredResponse : response).map((post, index) => (
+                    (flair === '' ? response : filteredResponse).map((post, index) => (
                     <div className='post' key={index}>
                         <Post
                             post={post.data}
@@ -41,11 +41,12 @@ const Feed = () => {
             {isError && <div className="post">Something went wrong</div>}
             </main>
 
-            {filteredResponse && (
+            {uniqueFlairs.length > 0 && (
             <div className="flairContainer">
                 {uniqueFlairs.map((flair, index) => (
                     <Flair flair={flair} key={index} />
                 ))}
+                <button onClick={resetFlair}>Clear Flairs</button>
             </div>
             )}
         </div>

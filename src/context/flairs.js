@@ -15,6 +15,14 @@ export const FlairProvider = ({ children }) => {
                     flair: string
                 };
             });
+        },
+        resetFlair: (string) => {
+            setFlairState((prevState) => {
+                return {
+                    ...prevState,
+                    flair: ''
+                };
+            });
         }
     });
 
