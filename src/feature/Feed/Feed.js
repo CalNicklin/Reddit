@@ -18,10 +18,14 @@ const Feed = () => {
     const allFlairs = response.map(post => post.data.link_flair_text).filter(flair => flair !== null);
     const uniqueFlairs = [...new Set(allFlairs)];
 
-    const { flair } = useFlair();
+    const { flair, chooseFlair } = useFlair();
 
     const filteredResponse = response.filter(post => post.data.link_flair_text === flair);
     console.log(filteredResponse);
+
+    useEffect(() => {
+        chooseFlair('')
+    }, [subreddit]);
 
     if (flair === '') {
         return (
