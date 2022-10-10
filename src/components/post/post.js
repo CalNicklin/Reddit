@@ -7,22 +7,28 @@ const Post = (props) => {
     const date = new Date(created * 1000).toDateString();
 
 
-    return(
+    return (
         <div>
-            <div>
-                {author}
+            <div className="authorDate">
+                <div className="author">
+                    {author}
+                </div>
+                <div className="date">
+                    {date}
+                </div>
             </div>
-            <div>
-                {date}
-            </div>
-            <div>
-                {title}
-            </div>
-            <div>
-                {link_flair_text}
-            </div>
-            <div>
-                <img src={thumbnail} />
+            <div className="thumbnailTitleFlair">
+                <div className="titleFlair">
+                    <h2>
+                        {title}
+                    </h2>
+                    <div className="postFlair">
+                        {link_flair_text}
+                    </div>
+                </div>
+                <div className="thumbnail">
+                    <img src={thumbnail} />
+                </div>
             </div>
             <div>
                 <VotingActions votes={ups} />

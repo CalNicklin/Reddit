@@ -4,7 +4,7 @@ const SubredditSubTitle = (props) => {
     const { public_description } = about;
 
     return (
-        <div>
+        <div className="subredditSubTitle">
             {!about && (<div>...loading</div>)}
             {about && public_description}
         </div>

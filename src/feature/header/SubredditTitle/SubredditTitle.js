@@ -11,13 +11,13 @@ const SubredditTitle = (props) => {
     };
 
     return (
-        <div>
+        <div className="subredditSelector">
             <select onChange={handleChange}>
                 <option value='https://www.reddit.com/r/RunningShoeGeeks'>RunningShoeGeeks</option>
                 <option value='https://www.reddit.com/r/JamesHoffmann'>JamesHoffman</option>
                 <option value='https://www.reddit.com/r/hackernoon'>hackernoon</option>
             </select>
-            <p>r/{title}</p>
+            <p className="subredditTagline">r/{title}</p>
         </div>
     )
 };
