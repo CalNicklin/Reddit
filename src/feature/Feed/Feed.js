@@ -4,6 +4,7 @@ import useFetchPost from "../../hooks/useFetchPost";
 import { useSubreddit } from "../../context/subreddits";
 import { useFlair } from "../../context/flairs";
 import { useEffect } from "react";
+import Filters from "../../components/Filters/Filters";
 
 const Feed = () => {
 
@@ -42,12 +43,7 @@ const Feed = () => {
             </main>
 
             {uniqueFlairs.length > 0 && (
-            <div className="flairContainer">
-                {uniqueFlairs.map((flair, index) => (
-                    <Flair flair={flair} key={index} />
-                ))}
-                <button onClick={resetFlair}>Clear Flairs</button>
-            </div>
+            <Filters uniqueFlairs={uniqueFlairs} resetFlair={resetFlair} />
             )}
         </div>
     )
