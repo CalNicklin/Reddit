@@ -95,10 +95,8 @@ header {
 /* Feed Content */
 .post {
   float: left;
-  top: 226px;
   height: auto;
   width: 550px;
-  left: 173px;
   margin-top: 16px;
   overflow-y: scroll;
   background: white;
@@ -117,21 +115,18 @@ header {
   top: 5px;
 }
 
-.author {
-  font-family: 'IBMPlexMono-Medium';
-}
-
 .date {
   font-family: 'IBMPlexMono-ExtraLight';
+  font-size: 0.8rem;
 }
 
 .thumbnailTitleFlair {
   display: flex;
-  box-sizing: border-box;
   position: relative;
   width: 468px;
-  height: 61px;
+  height: fit-content;
   left: 0px;
+  margin-bottom: 5px;
   background: #FFFFFF;
 }
 
@@ -142,6 +137,7 @@ header {
   height: auto;
   left: 16px;
   top: 0px;
+  margin-bottom: 5px;
   text-align: start;
 }
 
@@ -164,6 +160,17 @@ header {
   position: relative;
   left: 60px;
   width: 140px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Post Actions */
+.postActions {
+  position: relative;
+  display: flex;
+  gap: 15px;
+  left: 16px;
+  margin-bottom: 5px;
 }
 
 /* Filter Header */
@@ -180,6 +187,7 @@ header {
 /* Flair Container */
 .flairContainer {
   display: flex;
+  height: fit-content;
   flex-wrap: wrap;
   flex-shrink: 0;
   gap: 10px;
@@ -190,7 +198,6 @@ header {
   background: #696FFF;
   border-radius: 3px;
 }
-
 
 /* Flair */
 .flair {

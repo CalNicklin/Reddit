@@ -32,18 +32,15 @@ const Feed = () => {
             <main>
                 {response && !isError && (
                     (flair === '' ? response : filteredResponse).map((post, index) => (
-                    <div className='post' key={index}>
                         <Post
-                            post={post.data}
-                        />
-                    </div>
-                ))
+                            post={post.data} key={index} />
+                    ))
                 )}
-            {isError && <div className="post">Something went wrong</div>}
+                {isError && <div className="post">Something went wrong</div>}
             </main>
 
             {uniqueFlairs.length > 0 && (
-            <Filters uniqueFlairs={uniqueFlairs} resetFlair={resetFlair} />
+                <Filters uniqueFlairs={uniqueFlairs} resetFlair={resetFlair} />
             )}
         </div>
     )
