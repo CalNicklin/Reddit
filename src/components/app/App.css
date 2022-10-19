@@ -104,6 +104,12 @@ header {
 }
 
 /* Post Content */
+
+.author {
+  margin: 0px;
+  font-size: 0.9rem;
+}
+
 .authorDate {
   position: relative;
   display: flex;
@@ -116,6 +122,7 @@ header {
 }
 
 .date {
+  margin: 0px;
   font-family: 'IBMPlexMono-ExtraLight';
   font-size: 0.8rem;
 }
