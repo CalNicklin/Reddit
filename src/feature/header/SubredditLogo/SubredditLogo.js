@@ -5,6 +5,7 @@ const SubredditLogo = () => {
     const { subreddit } = useSubreddit();
 
     const loadIcon = (subreddit) => {
+        // uses switch statement with local files because the reddit api doesn't allow access to subreddit community icons.
         switch (subreddit) {
             case 'https://www.reddit.com/r/RunningShoeGeeks':
                 return '/index.png';

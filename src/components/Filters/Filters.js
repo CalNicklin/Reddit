@@ -1,5 +1,7 @@
 import Flair from "../flair/Flair";
 
+// This component renders a list of 'flairs', passed down as props from the initial fetchPost hook, which are selected by the user to filter the lists of posts. 
+
 const Filters = (props) => {
 
     const { uniqueFlairs, resetFlair } = props;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 
 const useFetchSubreddit = (url) => {
     const [isError, setError] = useState(false);
@@ -8,16 +8,19 @@ const useFetchSubreddit = (url) => {
     const fetchSubreddit = useCallback(async () => {
         setError(false);
         try {
-            const res = await axios(`${url}/about.json`, {
+            const res = await axios.get(`${url}/about.json`, {
             })
-            const subredditAbout = res.data;
-            setResponse(subredditAbout);
+            setResponse(res.data);
         }
         catch (error) {
             setError(true);
             console.log(error)
         };
     }, [url]);
+
+    useEffect(() => {
+        fetchSubreddit();
+      }, [fetchSubreddit]);
 
     return { isError, response, fetchSubreddit };
 };

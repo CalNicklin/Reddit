@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 
 const useFetchPost = (url) => {
     const [isError, setError] = useState(false);
@@ -8,7 +8,7 @@ const useFetchPost = (url) => {
     const fetchPost = useCallback(async () => {
         setError(false);
         try {
-            const res = await axios(`${url}.json`, {
+            const res = await axios.get(`${url}.json`, {
             })
             const posts = res.data.data.children;
             setResponse(posts);
@@ -18,6 +18,10 @@ const useFetchPost = (url) => {
             console.log(error)
         };
     }, [url]);
+
+    useEffect(() => {
+        fetchPost();
+      }, [fetchPost]);
 
     return { isError, response, fetchPost };
 };
