@@ -51,6 +51,21 @@ header {
   font-size: 1.1rem;
 }
 
+@media only screen and (max-width: 978px) {
+  header {
+    position: static;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 5px;
+    left: 0px;
+    top: 0px;
+    background: #FFF969;
+    font-size: 1.1rem;
+  }
+}
+
 /* Subreddit Logo */
 .logo {
   margin: auto;
@@ -88,7 +103,7 @@ header {
   margin: auto;
   width: 723px;
   height: 325px;
-  top: 242px;
+  top: 10px;
   font-size: 1.09rem;
 }
 
@@ -96,7 +111,7 @@ header {
 .post {
   float: left;
   height: auto;
-  width: 550px;
+  max-width: 550px;
   margin-top: 16px;
   overflow-y: scroll;
   background: white;
