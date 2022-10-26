@@ -27,7 +27,7 @@ const Header = () => {
                     <SubredditTitle handle={data} />
                 </div>
                 <div>
-                    <SubredditSubTitle about={data} />
+                    <SubredditSubTitle about={data}/>
                 </div>
             </header>
         )

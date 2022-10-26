@@ -90,6 +90,7 @@ header {
 /* Subreddit Subtitle */
 .subredditSubTitle {
   margin-top: 20px;
+  text-align: center;
   font-family: 'IBMPlexMono-Light';
 }
 
@@ -152,7 +153,7 @@ header {
 ul,
 li {
   padding: 5px;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 /* Title and Flair */
