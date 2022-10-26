@@ -152,6 +152,7 @@ header {
 ul,
 li {
   padding: 5px;
+  overflow-y: auto;
 }
 
 /* Title and Flair */
