@@ -111,7 +111,6 @@ header {
   height: auto;
   max-width: 550px;
   margin-top: 16px;
-  overflow-y: scroll;
   background: white;
   border-radius: 3px;
 }
@@ -145,7 +144,7 @@ header {
   position: relative;
   width: 468px;
   height: fit-content;
-  left: 0px;
+  padding: 0px 5px 0px 5px;
   margin-bottom: 5px;
   background: #FFFFFF;
 }
@@ -157,10 +156,9 @@ li {
 
 /* Title and Flair */
 .titleFlair {
-  position: relative;
+  float: left;
   width: 100%;
   height: auto;
-  left: 16px;
   top: 0px;
   margin-bottom: 5px;
   text-align: start;
@@ -182,8 +180,7 @@ li {
 }
 
 .thumbnail img {
-  position: relative;
-  left: 60px;
+  float: right;
   width: 140px;
   height: 100px;
   object-fit: cover;
