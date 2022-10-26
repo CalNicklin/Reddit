@@ -30,6 +30,9 @@ const Feed = () => {
 
     return (
         <div className='feed'>
+            {uniqueFlairs.length > 0 && (
+                <Filters uniqueFlairs={uniqueFlairs} resetFlair={resetFlair} />
+            )}
             <main id='feed'>
                 {response && !isError && (
                     // default flair is '' which displays all posts. Otherwise, show filtered.
@@ -40,10 +43,6 @@ const Feed = () => {
                 )}
                 {isError && <div className="post">Something went wrong</div>}
             </main>
-
-            {uniqueFlairs.length > 0 && (
-                <Filters uniqueFlairs={uniqueFlairs} resetFlair={resetFlair} />
-            )}
         </div>
     )
 };
