@@ -2,7 +2,9 @@ import VotingActions from "./voting actions/VotingActions";
 import CommentsActions from "./comment actions/CommentsActions";
 import { useEffect, useState, useRef } from "react";
 import useFetchComments from "../../hooks/useFetchComments";
-import autoAnimate from "@formkit/auto-animate"
+import autoAnimate from "@formkit/auto-animate";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
+
 
 const Post = (props) => {
     // Passed props from the feed.js component which fetches post data from reddit.
@@ -34,12 +36,12 @@ const Post = (props) => {
     };
 
     // Animations
-    const parentRef = useRef();
+    const parent = useAutoAnimate({ duration: 2000 });
     useEffect(() => {
-        if (parentRef.current) {
-            autoAnimate(parentRef.current);
+        if (parent.current && commentVisibility !== true) {
+            autoAnimate(parent.current);
         }
-    }, [parentRef]);
+    }, [parent, commentVisibility])
 
     return (
         <div className="post">
@@ -69,14 +71,15 @@ const Post = (props) => {
                 <VotingActions votes={ups} />
                 <CommentsActions comments={num_comments} handleClick={handleClick} />
             </div>
-            {commentVisibility && (
-                <div ref={parentRef}>
+            <div ref={parent}>
+                {commentVisibility && (
                     <ul>
                         {comments.map((comment, index) =>
+                            // comment[1] is author, comment [0] is comment body
                             <li key={index}>{comment[1]}<p>{comment[0]}</p></li>)}
                     </ul>
-                </div>
-            )}
+                )}
+            </div>
         </div>
     )
 };
