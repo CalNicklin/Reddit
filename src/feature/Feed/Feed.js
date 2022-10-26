@@ -2,8 +2,11 @@ import Post from "../../components/post/post";
 import useFetchPost from "../../hooks/useFetchPost";
 import { useSubreddit } from "../../context/subreddits";
 import { useFlair } from "../../context/flairs";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Filters from "../../components/Filters/Filters";
+import autoAnimate from '@formkit/auto-animate';
+import { useAutoAnimate } from "@formkit/auto-animate/react";
+
 
 const Feed = () => {
 
@@ -28,12 +31,20 @@ const Feed = () => {
         chooseFlair('')
     }, [subreddit]);
 
+    // Animations
+    const parent = useAutoAnimate({ duration: 2000 });
+    useEffect(() => {
+        if (parent.current) {
+            autoAnimate(parent.current);
+        }
+    }, [parent])
+
     return (
         <div className='feed'>
             {uniqueFlairs.length > 0 && (
                 <Filters uniqueFlairs={uniqueFlairs} resetFlair={resetFlair} />
             )}
-            <main id='feed'>
+            <main id='feed' ref={parent}>
                 {response && !isError && (
                     // default flair is '' which displays all posts. Otherwise, show filtered.
                     (flair === '' ? response : filteredResponse).map((post, index) => (

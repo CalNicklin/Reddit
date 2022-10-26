@@ -1,7 +1,8 @@
 import VotingActions from "./voting actions/VotingActions";
 import CommentsActions from "./comment actions/CommentsActions";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import useFetchComments from "../../hooks/useFetchComments";
+import autoAnimate from "@formkit/auto-animate"
 
 const Post = (props) => {
     // Passed props from the feed.js component which fetches post data from reddit.
@@ -20,13 +21,25 @@ const Post = (props) => {
     useEffect(() => {
         fetchComments(url)
     }, [url]);
-    
-    // the fetchComments hook returns an object of comments, this returns an array of the 'body' property.
-    const comments = Object.values(response).map(comment => comment.data.body)
 
+    // the fetchComments hook returns an object of comments, this returns an array of the 'body' property.
+    const comments = Object.values(response).map(comment =>
+        [comment.data.body,
+        comment.data.author]
+    )
+
+    // Toggles comments visibility
     const handleClick = () => {
         setCommentsState(current => !current);
     };
+
+    // Animations
+    const parentRef = useRef();
+    useEffect(() => {
+        if (parentRef.current) {
+            autoAnimate(parentRef.current);
+        }
+    }, [parentRef]);
 
     return (
         <div className="post">
@@ -57,10 +70,12 @@ const Post = (props) => {
                 <CommentsActions comments={num_comments} handleClick={handleClick} />
             </div>
             {commentVisibility && (
-                <ul>
-                    {comments.map((comment, index) =>
-                        <li key={index}>{index}<p>{comment}</p></li>)}
-                </ul>
+                <div ref={parentRef}>
+                    <ul>
+                        {comments.map((comment, index) =>
+                            <li key={index}>{comment[1]}<p>{comment[0]}</p></li>)}
+                    </ul>
+                </div>
             )}
         </div>
     )
