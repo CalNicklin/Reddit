@@ -4,7 +4,7 @@
 ### The Reddit API provides data which you will integrate into your application. The application will allow users to view and search posts and comments provided by the API. 
 
 ## Project Requirements
-* Build the application using React and Redux 
+* Build the application using React and Redux - I've chosen context instead! 
 * Version control your application with Git and host the repository on GitHub 
 * Use a project management tool (GitHub Projects, Trello, etc.) to plan your work 
 * Write a README (using Markdown) that documents your project including:
