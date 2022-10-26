@@ -189,16 +189,6 @@ li {
   object-fit: cover;
 }
 
-@media only screen and (max-width: 340px) {
-  .thumbnail img {
-    position: relative;
-    left: 35px;
-    width: 140px;
-    height: 100px;
-    object-fit: cover;
-  }
-}
-
 /* Post Actions */
 .postActions {
   position: relative;
@@ -285,6 +275,12 @@ li {
     font-size: 1rem;
   }
 
+  @media only screen and (max-width: 390px) {
+    .titleFlair h2 {
+      max-width: 90px;
+    }
+  }
+
   .postFlair {
     position: relative;
     width: fit-content;
@@ -301,6 +297,16 @@ li {
     width: 140px;
     height: 100px;
     object-fit: cover;
+  }
+
+  @media only screen and (max-width: 340px) {
+    .thumbnail img {
+      position: relative;
+      left: 35px;
+      width: 140px;
+      height: 100px;
+      object-fit: cover;
+    }
   }
 
   /* Post Actions */
