@@ -1,3 +1,5 @@
+import TextTransition, { presets } from "react-text-transition";
+
 const SubredditSubTitle = (props) => {
 
     const { about } = props;
@@ -6,7 +8,9 @@ const SubredditSubTitle = (props) => {
     return (
         <div className="subredditSubTitle">
             {!about && (<div>...loading</div>)}
-            {about && public_description}
+            <TextTransition springConfig={presets.default} direction='down'>
+                {about && public_description}
+            </TextTransition>
         </div>
     )
 };
