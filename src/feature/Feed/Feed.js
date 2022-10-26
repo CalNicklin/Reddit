@@ -30,7 +30,7 @@ const Feed = () => {
 
     return (
         <div className='feed'>
-            <main>
+            <main id='feed'>
                 {response && !isError && (
                     // default flair is '' which displays all posts. Otherwise, show filtered.
                     (flair === '' ? response : filteredResponse).map((post, index) => (

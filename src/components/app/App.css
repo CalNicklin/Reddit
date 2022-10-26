@@ -41,8 +41,7 @@
 /* Header */
 header {
   /* Banner */
-  position: absolute;
-  display: block;
+  position: static;
   width: 100%;
   height: 226px;
   left: 0px;
@@ -55,7 +54,6 @@ header {
   header {
     position: static;
     z-index: 1;
-    display: block;
     width: 100%;
     height: fit-content;
     padding-bottom: 5px;
@@ -101,7 +99,7 @@ header {
   display: flex;
   gap: 10px;
   margin: auto;
-  width: 723px;
+  max-width: 723px;
   height: 325px;
   top: 10px;
   font-size: 1.09rem;
@@ -152,6 +150,11 @@ header {
   background: #FFFFFF;
 }
 
+ul,
+li {
+  padding: 5px;
+}
+
 /* Title and Flair */
 .titleFlair {
   position: relative;
@@ -195,6 +198,110 @@ header {
   margin-bottom: 5px;
 }
 
+@media only screen and (max-width: 680px) {
+
+  /* Feed */
+  .feed,
+  #feed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: auto;
+    max-width: 550px;
+    height: auto;
+    top: 10px;
+    font-size: 1.09rem;
+  }
+
+  /* Feed Content */
+  .post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    max-width: 85%;
+    margin-top: 16px;
+    background: white;
+    border-radius: 3px;
+  }
+
+  /* Post Content */
+
+  .author {
+    margin: 0px;
+    font-size: 0.9rem;
+  }
+
+  .authorDate {
+    display: flex;
+    gap: 20px;
+    text-align: start;
+    width: 100%;
+    height: 36px;
+    top: 5px;
+  }
+
+  .date {
+    margin: 0px;
+    font-family: 'IBMPlexMono-ExtraLight';
+    font-size: 0.8rem;
+  }
+
+  .thumbnailTitleFlair {
+    display: flex;
+    max-width: 75%;
+    height: fit-content;
+    left: 0px;
+    margin-bottom: 5px;
+    background: #FFFFFF;
+  }
+
+  /* Title and Flair */
+  .titleFlair {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    left: 16px;
+    top: 0px;
+    margin-bottom: 5px;
+    text-align: start;
+  }
+
+  .titleFlair h2 {
+    font-family: 'IBMPlexMono-Medium';
+    font-size: 1rem;
+  }
+
+  .postFlair {
+    position: relative;
+    width: fit-content;
+    padding: 5px;
+    height: 15px;
+    background: #D9D9D9;
+    border-radius: 15px;
+    font-size: 0.72rem;
+  }
+
+  .thumbnail img {
+    position: relative;
+    left: 60px;
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  /* Post Actions */
+  .postActions {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    left: 16px;
+    margin-bottom: 5px;
+  }
+}
+
 /* Filter Header */
 .filterHeader {
   display: flex;
@@ -219,6 +326,23 @@ header {
   max-width: 200px;
   background: #696FFF;
   border-radius: 3px;
+}
+
+@media only screen and (max-width: 680px) {
+  .flairContainer {
+    position: static;
+    top: 200px;
+    height: fit-content;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 16px;
+    float: right;
+    max-width: 400px;
+    background: #696FFF;
+    border-radius: 3px;
+  }
 }
 
 /* Flair */
