@@ -192,7 +192,7 @@ li {
 @media only screen and (max-width: 340px) {
   .thumbnail img {
     position: relative;
-    left: 30px;
+    left: 35px;
     width: 140px;
     height: 100px;
     object-fit: cover;
